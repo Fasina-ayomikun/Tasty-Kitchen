@@ -88,7 +88,7 @@ const Wrapper = styled.section`
       width: 50%;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1052px) {
     .cover {
       display: none;
     }
