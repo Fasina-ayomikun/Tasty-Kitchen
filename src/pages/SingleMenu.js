@@ -112,7 +112,7 @@ function SingleMenu() {
           </div>
         </div>
         <button className='order-btn error-btn'>
-          <a href='#'>Order now</a>
+          Order now
         </button>
       </div>
     </Wrapper>
@@ -130,6 +130,7 @@ const Wrapper = styled.section`
   }
   .order-btn {
     width: 50%;
+    color:var(--grey-200);
   }
   img {
     width: 500px;
