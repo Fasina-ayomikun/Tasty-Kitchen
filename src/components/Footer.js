@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   h5 {
     color: var(--primary-200);
     margin: 0 10px;
+    text-align:center;
   }
 `;
 export default Footer;
