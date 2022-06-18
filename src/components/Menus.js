@@ -136,11 +136,13 @@ const Wrapper = styled.div`
   @media (max-width: 1200px) {
     .container {
       grid-template-columns: repeat(2, 1fr);
+      padding:0 50px;
     }
   }
   @media (max-width: 768px) {
     .container {
       grid-template-columns: 1fr;
+      padding:0 10px;
     }
   }
 `;
