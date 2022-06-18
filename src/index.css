@@ -206,7 +206,7 @@ hr {
   text-align: center;
   margin-top: 40px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1052px) {
   .section-container {
     background: radial-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
       url("./images/hero-image.jpg") no-repeat center/cover;
