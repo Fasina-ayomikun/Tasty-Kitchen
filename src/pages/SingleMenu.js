@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import {Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 import { useAppProvider } from "../context/context";
@@ -112,7 +112,7 @@ function SingleMenu() {
           </div>
         </div>
         <button className='order-btn error-btn'>
-          <Link to='/order'>Order now</Link>
+          <a href='#'>Order now</a>
         </button>
       </div>
     </Wrapper>
