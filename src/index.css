@@ -1,13 +1,268 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@400;700&display=swap");
+
+html {
+  font-size: 100%;
+} /*16px*/
+
+:root {
+  /* colors */
+  --primary-50: #dbd2dd;
+  --primary-100: #ccb5d1;
+  --primary-200: #a86fb4;
+  --primary-300: #9c5baa;
+  --primary-400: #813991;
+  --primary-500: #6b287a;
+  --primary-600: #5f1c6e;
+  --primary-700: #6d1281;
+  --primary-800: #420650;
+  --primary-900: #2c0235;
+
+  /* grey */
+  --grey-50: #f0f4f8;
+  --grey-100: #d9e2ec;
+  --grey-200: #bcccdc;
+  --grey-300: #9fb3c8;
+  --grey-400: #829ab1;
+  --grey-500: #627d98;
+  --grey-600: #486581;
+  --grey-700: #334e68;
+  --grey-800: #243b53;
+  --grey-900: #102a43;
+  /* rest of the colors */
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+
+  /* fonts  */
+  --headingFont: "Roboto Condensed", Sans-Serif;
+  --bodyFont: "Cabin", Sans-Serif;
+  --small-text: 0.875rem;
+  --extra-small-text: 0.7em;
+  /* rest of the vars */
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-900);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 500px;
+  --fluid-width: 90vw;
+  --breakpoint-lg: 992px;
+  --nav-height: 6rem;
+  /* box shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  background: var(--backgroundColor);
+  font-family: var(--bodyFont);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--textColor);
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  max-width: 40em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  margin-bottom: 1.38rem;
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text-small {
+  font-size: var(--small-text);
+}
+
+a {
+  text-decoration: none;
+  letter-spacing: var(--letterSpacing);
+}
+a,
+button {
+  line-height: 1.15;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.section-container {
+  background: radial-gradient(
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("./images/hero-image.jpg") no-repeat center/cover;
+  height: 100vh;
+}
+.btn {
+  background-color: var(--primary-700);
+  padding: 15px 25px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border: 0;
+  animation: btn 1s infinite;
+}
+hr {
+  border: 3px solid var(--primary-700);
+  border-radius: 5px;
+}
+.section-container .about {
+  background: none;
+}
+.hr {
+  animation: hr 2s infinite;
+}
+.zindex {
+  z-index: 4;
+  position: relative;
+}
+@keyframes btn {
+  0% {
+    width: 150px;
+  }
+  50% {
+    width: 120px;
+  }
+  100% {
+    width: 150px;
+  }
+}
+@keyframes hr {
+  0% {
+    width: 200px;
+  }
+  50% {
+    width: 100px;
+  }
+  100% {
+    width: 200px;
+  }
+}
+.section-container {
+  background: none;
+}
+.h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .section-container {
+    background: radial-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
+      url("./images/hero-image.jpg") no-repeat center/cover;
+  }
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: none;
+  }
+}
+.bcg {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 6;
+  transition: 0.5s ease-in-out;
+}
+.error-btn {
+  background-color: var(--primary-800);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 90px);
+}
+.error h1 {
+  text-align: center;
+  text-transform: none;
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  border: 3px solid var(--grey-100);
+  border-radius: 50%;
+  border-top-color: #2c0235;
+  animation: spinner 0.5s linear infinite;
+  margin: 4rem auto;
+}
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }
